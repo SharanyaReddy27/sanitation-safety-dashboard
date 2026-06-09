@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipal Sanitation Worker Safety Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>🏛️ Municipal Sanitation Worker Safety Monitoring</h1>
+            <div class="header-info">
+                <span id="current-time"></span>
+                <span class="status-summary">
+                    <span class="status-badge safe">Safe: <span id="safe-count">0</span></span>
+                    <span class="status-badge warning">Warning: <span id="warning-count">0</span></span>
+                    <span class="status-badge danger">Danger: <span id="danger-count">0</span></span>
+                </span>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="/" class="nav-link active">Control Room</a>
+            <a href="/health-protection" class="nav-link">Health Protection</a>
+            <a href="/reports" class="nav-link">Reports</a>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard-container">
+        <!-- Worker Status Panel -->
+        <section class="workers-panel">
+            <h2>🚨 Live Worker Status</h2>
+            <div id="workers-grid" class="workers-grid">
+                <!-- Worker cards will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Map View -->
+        <section class="map-panel">
+            <h2>📍 Live Location Map</h2>
+            <div id="map" class="map-container"></div>
+            <div class="map-legend">
+                <span><span class="dot safe"></span> Safe</span>
+                <span><span class="dot warning"></span> Warning</span>
+                <span><span class="dot danger"></span> Danger</span>
+            </div>
+        </section>
+    </div>
+
+    <!-- Worker Detail Modal -->
+    <div id="worker-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="worker-details">
+                <!-- Worker details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Alert Modal -->
+    <div id="emergency-modal" class="modal emergency-modal">
+        <div class="modal-content emergency-content">
+            <h2>🚨 EMERGENCY ALERT</h2>
+            <div id="emergency-details">
+                <!-- Emergency details will be loaded here -->
+            </div>
+            <div class="emergency-actions">
+                <button class="btn-rescue" onclick="initiateRescue()">🚑 Initiate Rescue</button>
+                <button class="btn-voice" onclick="sendVoiceAlert()">📢 Send Voice Alert</button>
+                <button class="btn-close" onclick="closeEmergency()">Acknowledge</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Log Sidebar -->
+    <aside class="event-log">
+        <h3>📋 Event Log</h3>
+        <div id="event-list" class="event-list">
+            <!-- Events will be listed here -->
+        </div>
+    </aside>
+
+    <!-- Audio Alert -->
+    <audio id="alert-sound" preload="auto">
+        <source src="{{ url_for('static', filename='alert.mp3') }}" type="audio/mpeg">
+    </audio>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>

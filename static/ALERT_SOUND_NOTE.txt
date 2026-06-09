@@ -1,0 +1,26 @@
+ALERT SOUND FILE
+
+The dashboard expects an alert sound file at:
+static/alert.mp3
+
+To add an alert sound:
+1. Find or create an alert sound (MP3 format)
+2. Name it "alert.mp3"
+3. Place it in the static/ folder
+
+Recommended alert sounds:
+- Emergency siren
+- Alarm beep
+- Warning tone
+- Attention signal
+
+You can find free alert sounds at:
+- https://freesound.org/
+- https://www.zapsplat.com/
+- https://mixkit.co/free-sound-effects/
+
+Or use a simple beep sound generator online.
+
+The alert will play automatically when a worker enters danger status.
+
+If no alert.mp3 file is present, the dashboard will still work but without sound alerts.
