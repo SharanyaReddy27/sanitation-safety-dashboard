@@ -173,4 +173,17 @@ Municipal Government Use Only
 
 **Built for Municipal Sanitation Worker Safety**
 *Protecting those who keep our cities clean*
+
 LIVE DEMO : sanitation-safety-dashboard.vercel.app
+
+COLLABRATORS : 
+This project was developed collaboratively as part of a team effort by:
+
+Sharanya Reddy
+Vedha Harshitha Rayini
+Saranya Reddy
+Sudeepthi Pasupuleti
+
+all contributors were involved in the ideation, design, development, and implementation of the Sanitation Safety Dashboard. The repository was initially created and maintained under one contributor's GitHub account, and this fork/copy is shared to showcase the work and contributions of all team members.
+
+Special thanks to all team members for their valuable contributions and teamwork throughout the project.
